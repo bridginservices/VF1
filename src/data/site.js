@@ -152,7 +152,7 @@ export const furnitureCategories = [
       'Statement sofas, entertainment units and storage that turn your living room into a warm, welcoming centrepiece.',
     items: ['Sofa Sets', 'TV & Entertainment Units', 'Teakwood Dining Tables', 'Display & Storage Units', 'Coffee Tables & Shoe Racks'],
     image:
-      'https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1200&q=80',
+      '/images/cat-living-room.jpg',
     alt: 'Modern living room with a custom sofa and wooden TV unit',
   },
   {
@@ -162,7 +162,7 @@ export const furnitureCategories = [
       'Restful bedrooms built around smart storage — sliding wardrobes, upholstered beds and matching side units.',
     items: ['Beds & Cots', 'Sliding & Openable Wardrobes', 'Dressing Units', 'Bedside Tables', 'Study Tables'],
     image:
-      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80',
+      '/images/cat-bedroom.jpg',
     alt: 'Elegant bedroom with a custom wardrobe and upholstered bed',
   },
   {
@@ -172,7 +172,7 @@ export const furnitureCategories = [
       'Ergonomic, moisture-resistant modular kitchens designed for real Indian cooking — with tall units and clever corners.',
     items: ['L & U Shaped Layouts', 'Tall & Pantry Units', 'Chimney & Hob Integration', 'Soft-Close Hardware', 'Breakfast Counters'],
     image:
-      'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1200&q=80',
+      '/images/cat-kitchen.jpg',
     alt: 'Modern modular kitchen with tall units and island counter',
   },
   {
@@ -182,7 +182,7 @@ export const furnitureCategories = [
       'Productive workspaces with durable workstations, cabins and storage that scale with your team.',
     items: ['Workstations', 'Manager & Director Cabins', 'Conference Tables', 'Office Storage', 'Reception Desks'],
     image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
+      '/images/office-furniture.jpg',
     alt: 'Contemporary office interior with workstations and cabins',
   },
   {
@@ -192,7 +192,7 @@ export const furnitureCategories = [
       'Retail, hospitality and institutional fit-outs for shops, hotels and schools — display systems, counters and seating built to handle high footfall.',
     items: ['Retail Display Units', 'Billing & Reception Counters', 'Café & Restaurant Seating', 'School & Hotel Interiors', 'Showroom Fit-outs'],
     image:
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
+      '/images/commercial-retail.jpg',
     alt: 'Retail showroom interior with custom display units',
   },
 ];

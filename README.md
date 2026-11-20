@@ -41,11 +41,14 @@ npm run preview    # preview the production build
 
 1. **Domain:** set the real domain in `astro.config.mjs` (`site`) and
    `public/robots.txt`. This drives canonical URLs, the sitemap and Open Graph.
-2. **Images:** hero, about, service and furniture images currently load from
-   Unsplash for demo purposes. Swap them for real Veer Furnitech project photos
-   (put files in `src/assets/` or `public/`, then update the paths).
-3. **Video:** the Furniture banner uses a sample stock video; replace the
-   `<source src>` in `src/pages/furniture.astro` with your own clip.
+2. **Images:** hero, about, service and furniture images are **self-hosted**
+   stock photos in `public/images/`. Swap any file for a real Veer Furnitech
+   project photo — keep the same filename and it updates everywhere
+   automatically (no code changes needed).
+3. **Furniture banner:** uses a self-hosted image
+   (`public/images/furniture-banner.jpg`) with a cinematic slow-zoom. To use a
+   real walkthrough clip instead, replace the `.fbanner__media` div in
+   `src/pages/furniture.astro` with a `<video>` element.
 4. **Logo:** the official Veer Furnitech logo is in place at `public/logo.png`
    (transparent PNG, rendered via `src/components/Logo.astro`). Replace that
    file to update it everywhere.

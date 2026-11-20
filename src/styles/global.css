@@ -294,6 +294,42 @@ p {
 .reveal[data-delay='4'] {
   transition-delay: 0.32s;
 }
+.reveal[data-delay='5'] {
+  transition-delay: 0.4s;
+}
+.reveal[data-delay='6'] {
+  transition-delay: 0.48s;
+}
+
+/* Directional + scale reveal variants (set the start transform; the shared
+   .is-visible rule clears it). Keep transforms GPU-friendly. */
+.reveal--left {
+  transform: translateX(-38px);
+}
+.reveal--right {
+  transform: translateX(38px);
+}
+.reveal--scale {
+  transform: scale(0.92);
+}
+.reveal--blur {
+  filter: blur(8px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease),
+    filter 0.7s var(--ease);
+}
+.reveal--left.is-visible,
+.reveal--right.is-visible,
+.reveal--scale.is-visible {
+  transform: none;
+}
+.reveal--blur.is-visible {
+  filter: none;
+}
+
+/* Animated count-up number (pairs with the stat counter script) */
+.stat__value {
+  font-variant-numeric: tabular-nums;
+}
 
 /* ---------- Accessibility ---------- */
 .sr-only {

@@ -14,21 +14,21 @@ import {
 const slides = [
   {
     image:
-      'https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1800&q=80',
+      '/images/living-room-sofa.jpg',
     alt: 'Elegant living room furniture with a modern sofa set',
     heading: 'Crafting Comfort. Designing Dreams.',
     sub: 'Premium living-room furniture, made-to-measure in Nagpur.',
   },
   {
     image:
-      'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1800&q=80',
+      '/images/modular-kitchen.jpg',
     alt: 'Modern modular kitchen with island counter',
     heading: 'Where Furniture Meets Elegance',
     sub: 'Ergonomic modular kitchens built for the way India cooks.',
   },
   {
     image:
-      'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1800&q=80',
+      '/images/bedroom-wardrobe.jpg',
     alt: 'Serene bedroom with a custom wardrobe and bed',
     heading: 'Bedrooms Designed Around You',
     sub: 'Smart storage and restful design, crafted to last.',
@@ -95,7 +95,7 @@ const desc =
   <!-- ============ ABOUT ============ -->
   <section class="section" id="about">
     <div class="container about">
-      <div class="about__text reveal">
+      <div class="about__text reveal reveal--left">
         <span class="eyebrow">Who we are</span>
         <h2>Furniture &amp; interior solutions, crafted under one roof</h2>
         <p>
@@ -122,9 +122,9 @@ const desc =
           <a class="btn btn--outline" href={`tel:${business.phoneRaw}`}><Icon name="phone" size={18} /> {business.phone}</a>
         </div>
       </div>
-      <div class="about__media reveal" data-delay="2">
+      <div class="about__media reveal reveal--right">
         <img
-          src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80"
+          src="/images/living-room-interior.jpg"
           alt="Modern furnished living room designed by Veer Furnitech"
           loading="lazy"
           width="1000"

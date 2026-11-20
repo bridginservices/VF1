@@ -9,21 +9,14 @@ const desc =
 ---
 
 <BaseLayout title="Custom Furniture in Nagpur — For Every Space" description={desc}>
-  <!-- Video-background banner (falls back to a poster image) -->
+  <!-- Cinematic image banner (self-hosted). Drop in a real walkthrough clip
+       later by replacing .fbanner__media with a <video> element. -->
   <section class="fbanner">
-    <video
-      class="fbanner__video"
-      autoplay
-      muted
-      loop
-      playsinline
-      poster="https://images.unsplash.com/photo-1616627561950-9f746e330187?auto=format&fit=crop&w=1800&q=80"
-    >
-      <source
-        src="https://cdn.coverr.co/videos/coverr-a-modern-living-room-2633/1080p.mp4"
-        type="video/mp4"
-      />
-    </video>
+    <div
+      class="fbanner__media"
+      role="img"
+      aria-label="Modern furniture and interiors crafted by Veer Furnitech"
+    ></div>
     <div class="fbanner__overlay"></div>
     <div class="container fbanner__content">
       <span class="eyebrow">Furniture For You</span>
@@ -49,7 +42,7 @@ const desc =
 
     <div class="cats">
       {furnitureCategories.map((cat, i) => (
-        <article class={`cat reveal ${i % 2 === 1 ? 'cat--flip' : ''}`} id={cat.id}>
+        <article class={`cat reveal ${i % 2 === 1 ? 'cat--flip reveal--right' : 'reveal--left'}`} id={cat.id}>
           <div class="container cat__inner">
             <div class="cat__media">
               <img src={cat.image} alt={cat.alt} loading="lazy" width="1200" height="800" />
@@ -92,12 +85,19 @@ const desc =
     color: #fff;
     overflow: hidden;
   }
-  .fbanner__video {
+  .fbanner__media {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background: url('/images/furniture-banner.jpg') center / cover no-repeat;
+    transform: scale(1.05);
+    animation: fbannerZoom 18s ease-in-out infinite alternate;
+  }
+  @keyframes fbannerZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.16); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fbanner__media { animation: none; transform: none; }
   }
   .fbanner__overlay {
     position: absolute;

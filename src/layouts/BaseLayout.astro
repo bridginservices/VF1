@@ -126,6 +126,44 @@ const jsonLd = {
       } else {
         els.forEach((el) => el.classList.add('is-visible'));
       }
+
+      // Count-up animation for stat numbers (e.g. "25+", "5.0★", "100%").
+      // Skips values >= 1000 (years) and respects reduced-motion.
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const counters = document.querySelectorAll('.stat__value');
+      const runCount = (el) => {
+        const raw = el.textContent.trim();
+        const m = raw.match(/^(\d+(?:\.\d+)?)(.*)$/s);
+        if (!m) return;
+        const target = parseFloat(m[1]);
+        const suffix = m[2] || '';
+        const decimals = (m[1].split('.')[1] || '').length;
+        if (reduce || target >= 1000) return;
+        const dur = 1500;
+        const t0 = performance.now();
+        const step = (now) => {
+          const p = Math.min((now - t0) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = m[1] + suffix;
+        };
+        requestAnimationFrame(step);
+      };
+      if (counters.length && 'IntersectionObserver' in window) {
+        const cio = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                runCount(e.target);
+                cio.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.6 }
+        );
+        counters.forEach((el) => cio.observe(el));
+      }
     </script>
   </body>
 </html>

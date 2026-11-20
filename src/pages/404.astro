@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import { nav, business, whatsappLink } from '../data/site.js';
+
+const desc =
+  "Sorry — the page you're looking for doesn't exist. Explore Veer Furnitech's furniture and interior design services in Nagpur, or get in touch.";
+---
+
+<BaseLayout title="Page Not Found" description={desc} noindex={true}>
+  <section class="nf">
+    <div class="nf__bg" aria-hidden="true"></div>
+    <div class="nf__overlay" aria-hidden="true"></div>
+    <div class="container nf__content">
+      <span class="eyebrow">Error 404</span>
+      <p class="nf__code" aria-hidden="true">404</p>
+      <h1>This room doesn't exist&nbsp;— yet.</h1>
+      <p class="nf__sub">
+        The page you're looking for may have been moved or removed. Let's get you
+        back to something beautiful.
+      </p>
+
+      <div class="btn-row nf__cta">
+        <a class="btn btn--brass btn--lg" href="/">
+          <Icon name="arrowRight" size={18} /> Back to Home
+        </a>
+        <a class="btn btn--ghost btn--lg" href={whatsappLink('Hi Veer Furnitech, I need help finding something on your site.')} target="_blank" rel="noopener">
+          <Icon name="whatsapp" size={18} /> Chat with us
+        </a>
+      </div>
+
+      <nav class="nf__links" aria-label="Popular pages">
+        {nav.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+        <a href={`tel:${business.phoneRaw}`}>{business.phone}</a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .nf {
+    position: relative;
+    min-height: clamp(560px, 86vh, 820px);
+    display: grid;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+  }
+  .nf__bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/living-room-sofa.jpg') center / cover no-repeat;
+    transform: scale(1.08);
+    animation: nfZoom 20s ease-in-out infinite alternate;
+  }
+  .nf__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(36, 10, 10, 0.92),
+      rgba(74, 20, 20, 0.78)
+    );
+  }
+  .nf__content {
+    position: relative;
+    max-width: 640px;
+    margin-inline: auto;
+    padding-block: 4rem;
+  }
+  .nf .eyebrow {
+    color: var(--brass-light);
+    justify-content: center;
+    display: flex;
+  }
+  .nf__code {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: clamp(6rem, 22vw, 13rem);
+    line-height: 0.9;
+    margin: 0.4rem 0 0.2rem;
+    background: linear-gradient(135deg, var(--brass-light), var(--brass));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+  }
+  .nf h1 {
+    color: #fff;
+    font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+    margin-bottom: 0.7rem;
+  }
+  .nf__sub {
+    color: #f2ddd4;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 46ch;
+    margin: 0 auto 1.8rem;
+  }
+  .nf__cta {
+    justify-content: center;
+    margin-bottom: 2.2rem;
+  }
+  .nf__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.6rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .nf__links a {
+    color: #ecd6ce;
+    font-size: 0.92rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.25s var(--ease);
+  }
+  .nf__links a:hover { color: #fff; }
+  .nf__links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: var(--brass);
+    transition: width 0.3s var(--ease);
+  }
+  .nf__links a:hover::after { width: 100%; }
+
+  /* entrance */
+  .nf__content > * {
+    animation: nfUp 0.7s var(--ease) both;
+  }
+  .nf .eyebrow { animation-delay: 0.05s; }
+  .nf__code { animation-delay: 0.12s; }
+  .nf h1 { animation-delay: 0.2s; }
+  .nf__sub { animation-delay: 0.28s; }
+  .nf__cta { animation-delay: 0.36s; }
+  .nf__links { animation-delay: 0.44s; }
+
+  @keyframes nfUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes nfZoom {
+    from { transform: scale(1.08); }
+    to { transform: scale(1.18); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nf__bg,
+    .nf__content > * { animation: none; transform: none; }
+  }
+</style>
