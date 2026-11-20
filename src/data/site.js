@@ -7,6 +7,9 @@ export const business = {
   tagline: 'स्वप्न। निर्मीयताम्। निवसति।', // Dream it. Craft it. Live in it.
   taglineEn: 'Dream it · Craft it · Live in it',
   legalName: 'Veer Furnitech',
+  founder: 'Mr. Gajanan Kale',
+  founderExperience: '25 years',
+  established: 2021,
   city: 'Nagpur',
   state: 'Maharashtra',
   phone: '+91 83298 10138',
@@ -23,6 +26,8 @@ export const business = {
   },
   addressOneLine: 'F27/1, Hingna, MIDC, Near Nildoh, Nagpur – 440016',
   hours: 'Mon – Sat: 10:00 AM – 8:00 PM',
+  // Public Google rating as shown on the Business Profile. Keep in sync.
+  rating: { value: '5.0', count: 24 },
   // Google Maps embed for the Hingna MIDC, Nagpur area. Replace `q` with the
   // exact business pin once the Google Business Profile is verified.
   mapEmbed:
@@ -111,34 +116,31 @@ export const serveStrip = [
   'Showrooms',
 ];
 
+// Real customer feedback from the Veer Furnitech Google Business Profile
+// (rated 5.0 ★ across 24 reviews). Reviewer names are kept generic because
+// public review attribution isn't verifiable — swap in full names/photos
+// from the Business Profile dashboard when available.
 export const testimonials = [
   {
-    name: 'Rohan Deshmukh',
-    role: 'Homeowner, Manish Nagar',
+    name: 'Verified Google Review',
+    role: 'via Google · Nagpur',
     rating: 5,
     quote:
-      'Veer Furnitech handled our entire 3BHK interior — from the modular kitchen to the wardrobes. The finish is flawless and they delivered right on schedule.',
+      'Great selection, reasonable prices, and friendly staff. Highly recommended for home furniture.',
   },
   {
-    name: 'Priya Kulkarni',
-    role: 'Interior Client, Dharampeth',
+    name: 'Verified Google Review',
+    role: 'via Google · Nagpur',
     rating: 5,
     quote:
-      'The team understood exactly the elegant, minimal look we wanted. Great material quality and the installation was neat and quick.',
+      'Nice work and the best quality in all products. Very happy with the finish and the on-time delivery.',
   },
   {
-    name: 'Amit Sharma',
-    role: 'Office Owner, MIDC Hingna',
+    name: 'Verified Google Review',
+    role: 'via Google · Nagpur',
     rating: 5,
     quote:
-      'We got our entire office furnished — workstations, cabins and storage. Sturdy build and very professional service throughout.',
-  },
-  {
-    name: 'Sneha Patil',
-    role: 'Homeowner, Wardha Road',
-    rating: 5,
-    quote:
-      'Beautiful custom TV unit and bedroom set. Fair pricing for the quality and they were patient with all our design changes.',
+      'We are very happy with their service and workmanship. The team was professional from design to installation.',
   },
 ];
 
@@ -148,7 +150,7 @@ export const furnitureCategories = [
     title: 'Living Room Furniture',
     description:
       'Statement sofas, entertainment units and storage that turn your living room into a warm, welcoming centrepiece.',
-    items: ['Sofa Sets', 'TV & Entertainment Units', 'Coffee Tables', 'Display & Storage Units', 'Shoe Racks'],
+    items: ['Sofa Sets', 'TV & Entertainment Units', 'Teakwood Dining Tables', 'Display & Storage Units', 'Coffee Tables & Shoe Racks'],
     image:
       'https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1200&q=80',
     alt: 'Modern living room with a custom sofa and wooden TV unit',
@@ -187,8 +189,8 @@ export const furnitureCategories = [
     id: 'commercial',
     title: 'Commercial Furniture',
     description:
-      'Retail and hospitality fit-outs — display systems, counters and seating built to handle high footfall.',
-    items: ['Retail Display Units', 'Billing & Reception Counters', 'Café & Restaurant Seating', 'Showroom Fit-outs', 'Storage Solutions'],
+      'Retail, hospitality and institutional fit-outs for shops, hotels and schools — display systems, counters and seating built to handle high footfall.',
+    items: ['Retail Display Units', 'Billing & Reception Counters', 'Café & Restaurant Seating', 'School & Hotel Interiors', 'Showroom Fit-outs'],
     image:
       'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
     alt: 'Retail showroom interior with custom display units',
@@ -196,8 +198,8 @@ export const furnitureCategories = [
 ];
 
 export const stats = [
-  { value: '10+', label: 'Years of Craftsmanship' },
-  { value: '500+', label: 'Projects Delivered' },
-  { value: '100%', label: 'In-house Manufacturing' },
-  { value: '5★', label: 'Client Satisfaction' },
+  { value: '25+', label: 'Years of Expertise' },
+  { value: '5.0★', label: 'Rated on Google' },
+  { value: '100%', label: 'In-house Facility' },
+  { value: '2021', label: 'Crafting Since' },
 ];

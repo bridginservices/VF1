@@ -40,6 +40,14 @@ const jsonLd = {
   },
   areaServed: 'Nagpur, Maharashtra',
   openingHours: 'Mo-Sa 10:00-20:00',
+  foundingDate: String(business.established),
+  founder: { '@type': 'Person', name: business.founder },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: business.rating.value,
+    reviewCount: business.rating.count,
+    bestRating: '5',
+  },
   sameAs: [
     business.social.instagram,
     business.social.facebook,

@@ -105,9 +105,11 @@ const desc =
           complete solutions from concept to installation.
         </p>
         <p>
-          With our own manufacturing facility in Hingna MIDC, we control every
-          stage — design, material, build and fit-out — so you get furniture
-          that's durable, elegant and delivered on time.
+          Founded in <strong>2021</strong> and led by <strong>{business.founder}</strong>,
+          who brings over <strong>25 years</strong> in the modular furniture
+          industry, our own factory in Hingna MIDC lets us control every stage —
+          design, material, build and fit-out — so you get furniture that's
+          durable, elegant and delivered on time.
         </p>
         <ul class="about__list">
           <li><Icon name="check" size={18} /> Design &amp; Planning</li>
@@ -129,8 +131,8 @@ const desc =
           height="1200"
         />
         <div class="about__badge">
-          <span class="about__badge-num">10+</span>
-          <span class="about__badge-txt">Years of<br />Craftsmanship</span>
+          <span class="about__badge-num">{business.rating.value}★</span>
+          <span class="about__badge-txt">Rated by<br />{business.rating.count} clients</span>
         </div>
       </div>
     </div>
@@ -175,7 +177,10 @@ const desc =
       <div class="section-head center">
         <span class="eyebrow">Client love</span>
         <h2>What our customers say</h2>
-        <p>Real feedback from homeowners and businesses across Nagpur.</p>
+        <p class="reviews__rating">
+          <span class="reviews__stars">★★★★★</span>
+          Rated <strong>{business.rating.value}</strong> on Google · {business.rating.count} reviews
+        </p>
       </div>
       <div class="grid grid--2 reviews">
         {testimonials.map((t, i) => (
@@ -520,6 +525,21 @@ const desc =
   }
 
   /* -------- Reviews -------- */
+  .reviews__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.98rem;
+    color: var(--muted);
+  }
+  .reviews__stars {
+    color: var(--brass);
+    letter-spacing: 0.1em;
+    font-size: 1.05rem;
+  }
+  .reviews__rating strong { color: var(--ink); }
   .review {
     position: relative;
     padding: 2rem 1.8rem 1.6rem;
