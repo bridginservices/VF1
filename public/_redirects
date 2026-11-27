@@ -1,3 +1,6 @@
 # Cloudflare Pages redirects. https://developers.cloudflare.com/pages/configuration/redirects/
-# Canonicalise www -> apex so it matches `site` in astro.config.mjs (good for SEO).
-https://www.veerfurnitech.com/* https://veerfurnitech.com/:splat 301
+# NOTE: www -> apex canonicalisation is handled by a zone-level Redirect Rule in
+# the Cloudflare dashboard, NOT here. In _redirects the source must be a relative
+# path; absolute/host-based sources are rejected at deploy (error 100324).
+# Add path-based redirects below as needed, e.g.:
+#   /old-path   /new-path   301
